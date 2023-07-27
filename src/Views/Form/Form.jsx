@@ -60,7 +60,7 @@ const Form = () => {
 
     const submitHandler = (e) => {
         e.preventDefault()
-        axios.post(`http://localhost:3001/dogs/`, formatDog(form)).then(res => alert("perro creado con exito"))
+        axios.post(`https://back-end-dogs-ok.onrender.com/dogs`, formatDog(form)).then(res => alert("perro creado con exito"))
     }
 
     return (
