@@ -59,7 +59,7 @@ export const getOrderAz= (azorder)=>{
 }
 export const getDogsByTemperament=(temporder)=>{
     return async (dispatch)=>{
-        const apidata= (await axios.get(`${server}?temporder=${temporder}`)).data
+        const apidata= (await axios.get(`${server}/dogs?temporder=${temporder}`)).data
         dispatch({type: GET_DOG_BY_TEMPERAMENT, payload: apidata})
     }
 }
