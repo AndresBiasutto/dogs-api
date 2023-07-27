@@ -11,7 +11,7 @@ import style from "./Form.module.css"
 const Form = () => {
     const temperaments = useSelector(state => state.temperaments)
     const dispatch = useDispatch()
-    const [selectedTemperamentId, setSelectedTemperamentId] = useState(0);
+    const [ setSelectedTemperamentId] = useState(0);
     const [form, setForm] = useState({
         name: "",
         image: "",

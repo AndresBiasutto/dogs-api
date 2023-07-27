@@ -3,7 +3,7 @@ import { useState } from "react";
 import { getDogByName } from "../../redux/actions";
 import { useSelector } from "react-redux";
 import style from "./SearchBar.module.css"
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 

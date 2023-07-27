@@ -12,7 +12,7 @@ export const CLEAN_DETAIL="CLEAN_DETAIL"
 export const DELETE_DOG="DELETE_DOG"
 
 const server= "https://back-end-dogs-ok.onrender.com/dogs"
-const local= "http://localhost:3001/dogs"
+// const local= "http://localhost:3001/dogs"
 
 export const getDogs = ()=> {
     return async (dispatch)=>{
