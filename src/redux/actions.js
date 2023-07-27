@@ -16,7 +16,7 @@ const server= "https://back-end-dogs-ok.onrender.com"
 
 export const getDogs = ()=> {
     return async (dispatch)=>{
-        const apiData= (await axios.get(`${server}`)).data
+        const apiData= (await axios.get(`${server}/dogs`)).data
         dispatch({type: GET_DOGS, payload: apiData})
     }
 }
