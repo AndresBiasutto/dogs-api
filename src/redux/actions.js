@@ -28,7 +28,7 @@ export const getDog = (id)=> {
 }
 export const getTemperaments= ()=>{
     return async (dispatch)=>{
-        const apidata= await axios.get(`https://back-end-dogs-ok.onrender.com/temperaments`)
+        const apidata= await axios.get(`${server}/temperaments`)
         const temperaments= apidata.data
         dispatch({type: GET_TEMPERAMENTS, payload: temperaments})
     }
