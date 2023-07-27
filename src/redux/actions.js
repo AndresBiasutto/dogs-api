@@ -11,7 +11,7 @@ export const GET_DOG_BY_TEMPERAMENT="GET_DOG_BY_TEMPERAMENT"
 export const CLEAN_DETAIL="CLEAN_DETAIL"
 export const DELETE_DOG="DELETE_DOG"
 
-const server= "https://back-end-dogs-ok.onrender.com"
+const server= "https://back-end-dogs-ok.onrender.com/dogs"
 // const local= "http://localhost:3001/dogs"
 
 export const getDogs = ()=> {
@@ -22,7 +22,7 @@ export const getDogs = ()=> {
 }
 export const getDog = (id)=> {
     return async (dispatch)=>{
-        const apiData= (await axios.get(`${server}/${id}/dogs`)).data
+        const apiData= (await axios.get(`${server}/${id}`)).data
         dispatch({type: GET_DOG, payload: apiData})
     }
 }
@@ -35,25 +35,25 @@ export const getTemperaments= ()=>{
 }
 export const getDogByName= (name)=>{
     return async (dispatch)=>{
-        const apidata= (await axios.get(`${server}/dogs?name=${name}`)).data
+        const apidata= (await axios.get(`${server}?name=${name}`)).data
         dispatch({type: GET_DOG_BY_NAME, payload: apidata})
     }
 }
 export const getOrder= (order)=>{
     return async (dispatch)=>{
-        const apidata= (await axios.get(`${server}/dogs/order?orderby=${order}`)).data
+        const apidata= (await axios.get(`${server}/order?orderby=${order}`)).data
         dispatch({type: GET_ORDER, payload: apidata})
     }
 }
 export const getOrigin= (origin)=>{
     return async (dispatch)=>{
-        const apidata= (await axios.get(`${server}/dogs/origin?origin=${origin}`)).data
+        const apidata= (await axios.get(`${server}/origin?origin=${origin}`)).data
         dispatch({type: GET_ORIGIN, payload: apidata})
     }
 }
 export const getOrderAz= (azorder)=>{
     return async (dispatch)=>{
-        const apidata= (await axios.get(`${server}/dogs/azorder?azorder=${azorder}`)).data
+        const apidata= (await axios.get(`${server}/azorder?azorder=${azorder}`)).data
         dispatch({type: GET_ORDER_AZ, payload: apidata})
     }
 }
@@ -65,7 +65,7 @@ export const getDogsByTemperament=(temporder)=>{
 }
 export const DeleteDog=(id)=>{
     return async (dispatch)=>{
-        await axios.delete(`${server}/dogs/delete/${id}`).data
+        await axios.delete(`${server}/delete/${id}`).data
         dispatch({type: DELETE_DOG, payload: id})      
     }
 }
