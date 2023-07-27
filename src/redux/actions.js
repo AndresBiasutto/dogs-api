@@ -22,7 +22,7 @@ export const getDogs = ()=> {
 }
 export const getDog = (id)=> {
     return async (dispatch)=>{
-        const apiData= (await axios.get(`${server}/${id}`)).data
+        const apiData= (await axios.get(`${server}/dogs/${id}`)).data
         dispatch({type: GET_DOG, payload: apiData})
     }
 }
@@ -35,25 +35,25 @@ export const getTemperaments= ()=>{
 }
 export const getDogByName= (name)=>{
     return async (dispatch)=>{
-        const apidata= (await axios.get(`${server}?name=${name}`)).data
+        const apidata= (await axios.get(`${server}/dogs?name=${name}`)).data
         dispatch({type: GET_DOG_BY_NAME, payload: apidata})
     }
 }
 export const getOrder= (order)=>{
     return async (dispatch)=>{
-        const apidata= (await axios.get(`${server}/order?orderby=${order}`)).data
+        const apidata= (await axios.get(`${server}/dogs/order?orderby=${order}`)).data
         dispatch({type: GET_ORDER, payload: apidata})
     }
 }
 export const getOrigin= (origin)=>{
     return async (dispatch)=>{
-        const apidata= (await axios.get(`${server}/origin?origin=${origin}`)).data
+        const apidata= (await axios.get(`${server}/dogs/origin?origin=${origin}`)).data
         dispatch({type: GET_ORIGIN, payload: apidata})
     }
 }
 export const getOrderAz= (azorder)=>{
     return async (dispatch)=>{
-        const apidata= (await axios.get(`${server}/azorder?azorder=${azorder}`)).data
+        const apidata= (await axios.get(`${server}/dogs/azorder?azorder=${azorder}`)).data
         dispatch({type: GET_ORDER_AZ, payload: apidata})
     }
 }
